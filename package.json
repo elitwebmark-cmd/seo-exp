@@ -1,0 +1,15 @@
+{
+  "name": "elit-web-seo-experiment",
+  "version": "1.0.0",
+  "description": "elit-web · SEO-експеримент · інтерактивна інфографіка",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve -s . -l ${PORT:-3000} --no-clipboard"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

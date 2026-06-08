@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>elit-web · SEO-експеримент · аналіз позицій</title>
+<meta name="description" content="Аналіз SEO-експерименту Elit-web.ua · динаміка позицій 482 запитів за 5 зрізів (Старт → 08.06.2026). Інтерактивна інфографіка з графіками, таблицями та висновками.">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="elit-web · SEO-експеримент · аналіз позицій">
+<meta property="og:description" content="Інтерактивна інфографіка динаміки 482 запитів. Середня позиція покращилась з 6.25 до 1.60.">
+<meta property="og:type" content="website">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000'/%3E%3Crect x='15' y='15' width='70' height='70' fill='%23FE391F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js"></script>
+<style>
+:root{--ew-red:#FE391F;--ew-black:#000;--ew-grey:#EDEDED;--ew-grey-dark:#5A5A5A;--ew-green:#0F6E56;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Mulish','Inter',sans-serif;background:#F8F8F8;color:#000;padding:32px;}
+.wrap{max-width:1280px;margin:0 auto;}
+header{background:#000;color:#fff;padding:36px;margin-bottom:28px;border-left:6px solid var(--ew-red);}
+.brand-row{display:flex;align-items:center;gap:10px;margin-bottom:16px;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.6);}
+.brand-row .dot{width:8px;height:8px;background:var(--ew-red);border-radius:50%;}
+header h1{font-size:36px;font-weight:900;letter-spacing:-1.5px;line-height:1.05;}
+header h1 .accent{color:var(--ew-red);}
+header .sub{margin-top:10px;font-size:14px;color:rgba(255,255,255,0.7);max-width:780px;line-height:1.5;}
+.section{margin-bottom:32px;}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid #000;}
+.sec-head .num{font-size:20px;color:var(--ew-red);font-weight:800;}
+.sec-head .slash{color:#000;}
+.sec-head h2{font-size:22px;font-weight:800;letter-spacing:-0.5px;}
+.sec-head .sub{margin-left:auto;font-size:11px;color:#5A5A5A;letter-spacing:0.5px;}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.kpi{background:#fff;padding:20px;border-top:3px solid #000;}
+.kpi.accent{border-top-color:var(--ew-red);}
+.kpi.green{border-top-color:var(--ew-green);}
+.kpi.dark{background:#000;color:#fff;border-top-color:var(--ew-red);}
+.kpi .lbl{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;opacity:0.7;margin-bottom:8px;}
+.kpi .val{font-size:34px;font-weight:900;line-height:1;letter-spacing:-1px;}
+.kpi .sub{font-size:11px;margin-top:6px;opacity:0.7;}
+.card{background:#fff;padding:22px;border-top:3px solid #000;}
+.card h3{font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;border-bottom:1px solid #EDEDED;padding-bottom:8px;}
+.card.dark{background:#000;color:#fff;}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.chart-wrap{position:relative;height:320px;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+table th{text-align:left;background:#000;color:#fff;padding:9px 11px;font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:700;}
+table th.num{text-align:right;}
+table td{padding:9px 11px;border-bottom:1px solid #EDEDED;}
+table td.num{text-align:right;font-variant-numeric:tabular-nums;}
+.delta{display:inline-block;font-weight:800;font-size:11px;padding:2px 8px;}
+.delta.up{background:#D7EBD8;color:#0F6E56;}
+.delta.down{background:#F4DDDB;color:#9F2D26;}
+.delta.flat{background:#EDEDED;color:#5A5A5A;}
+.bigflag{margin-top:16px;padding:18px 22px;background:#000;color:#fff;border-left:4px solid var(--ew-red);font-weight:700;font-size:14px;display:flex;align-items:center;gap:12px;line-height:1.5;}
+.bigflag .icon{font-size:24px;color:var(--ew-red);flex-shrink:0;}
+.note{font-size:12px;color:#5A5A5A;margin-top:10px;line-height:1.5;}
+.insights{list-style:none;padding:0;}
+.insights li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:13px;line-height:1.5;}
+.insights li:last-child{border-bottom:0;}
+.insights .marker{color:var(--ew-red);font-weight:900;flex-shrink:0;}
+.phrase{font-weight:700;}
+.pageurl{font-size:10px;color:#5A5A5A;display:block;margin-top:2px;font-family:'Courier New',monospace;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.pos-tag{display:inline-block;padding:2px 8px;font-size:11px;font-weight:800;letter-spacing:0.5px;font-variant-numeric:tabular-nums;}
+.pos-tag.top3{background:#0F6E56;color:#fff;}
+.pos-tag.top10{background:#FE391F;color:#fff;}
+.pos-tag.top20{background:#FFF6CC;color:#7A5C00;}
+.pos-tag.beyond{background:#F4DDDB;color:#9F2D26;}
+@media (max-width:900px){
+  body{padding:14px;}
+  .kpi-grid{grid-template-columns:repeat(2,1fr);}
+  .row{grid-template-columns:1fr;}
+  header h1{font-size:22px;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand-row"><span class="dot"></span><span>elit-web · SEO-експеримент</span><span class="dot"></span><span>аналіз позицій · станом на 08.06.2026</span></div>
+  <h1><span class="accent">SEO-експеримент</span> · динаміка 482 запитів</h1>
+  <div class="sub">П'ять зрізів позицій: старт експерименту → 19.05 → 26.05 → 01.06 → 08.06. Аналіз руху по групах ТОП-3 / ТОП-10 / ТОП-20+, переможці і ті що випали. Google.com.ua, Київ.</div>
+</header>
+
+<section class="section">
+  <div class="sec-head"><span class="num">00<span class="slash">/</span></span><h2>Підсумок експерименту</h2><span class="sub">482 запити</span></div>
+  <div class="kpi-grid">
+    <div class="kpi"><div class="lbl">Усього запитів</div><div class="val">482</div><div class="sub">під моніторингом</div></div>
+    <div class="kpi accent"><div class="lbl">ТОП-3 на 08.06</div><div class="val">447</div><div class="sub">93% · ⬆ зі старту (224, 46%) — РЕКОРД</div></div>
+    <div class="kpi green"><div class="lbl">ТОП-10 на 08.06</div><div class="val">459</div><div class="sub">95% · ⬆ зі старту (377, 78%)</div></div>
+    <div class="kpi dark"><div class="lbl">Середня позиція</div><div class="val">1.60</div><div class="sub">старт 6.25 · ⬆ -4.65 поз. РЕКОРД</div></div>
+    <div class="kpi"><div class="lbl">Покращились (зі старту)</div><div class="val" style="color:#0F6E56;">258</div><div class="sub">54% · vs 173 (01.06)</div></div>
+    <div class="kpi"><div class="lbl">Стабільні</div><div class="val">201</div><div class="sub">42% · ±1 позиція</div></div>
+    <div class="kpi"><div class="lbl">Погіршились</div><div class="val" style="color:#FE391F;">23</div><div class="sub">5% · vs 67 (01.06) — ▼ 66%</div></div>
+    <div class="kpi dark"><div class="lbl">Випали з ТОП-100</div><div class="val">15</div><div class="sub">3% · vs 25 (01.06) — ▼ 40%</div></div>
+  </div>
+  <div class="bigflag"><span class="icon">⚠</span><span><b>🚀 08.06 — новий рекорд експерименту!</b> Середня позиція 1.60 (найкраща за весь час), ТОП-3 — 447 запитів (93%, vs 295 на 01.06). За тиждень 194 запити покращились, 9 погіршились — потужний відскок після провалу. ТОП-10 практично насичений (459 з 482 = 95%).</span></div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><span class="num">01<span class="slash">/</span></span><h2>Розподіл за групами ТОП</h2><span class="sub">по 4 зрізах</span></div>
+  <div class="card"><div class="chart-wrap" style="height:360px;"><canvas id="buckets"></canvas></div></div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><span class="num">02<span class="slash">/</span></span><h2>Середня позиція</h2><span class="sub">динаміка по датах</span></div>
+  <div class="row">
+    <div class="card"><h3>Середня позиція (за виключенням >100)</h3><div class="chart-wrap"><canvas id="avgPos"></canvas></div>
+      <div class="note">Зеленим — найкращий стан (26.05, поз. 3.42). На 01.06 — корекція до 4.32, але це досі краще за старт (6.25).</div>
+    </div>
+    <div class="card"><h3>Кількість у ТОП-3 vs ТОП-10</h3><div class="chart-wrap"><canvas id="topCount"></canvas></div>
+      <div class="note">ТОП-10 загалом росте монотонно (377 → 409, +8.5%). ТОП-3 пік на 26.05 (372), на 01.06 — 295 (повернення до проміжного рівня).</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><span class="num">03<span class="slash">/</span></span><h2>Тиждень 26.05 → 01.06</h2><span class="sub">останнє коливання</span></div>
+  <div class="row">
+    <div class="card"><h3>Рух за тиждень</h3><div class="chart-wrap" style="height:250px;"><canvas id="weekMove"></canvas></div>
+      <div class="note">63% запитів стабільні (±1), 29% просіли, 8% покращились, 4% випали. Тиждень негативного руху після піку 26.05.</div>
+    </div>
+    <div class="card"><h3>Рух за весь експеримент</h3><div class="chart-wrap" style="height:250px;"><canvas id="totalMove"></canvas></div>
+      <div class="note">36% покращились, 50% стабільні, 14% погіршились, 5% випали. Загальний ефект експерименту — позитивний.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><span class="num">04<span class="slash">/</span></span><h2>Топ-15 переможців</h2><span class="sub">старт → 08.06, найбільший ріст</span></div>
+  <div class="card"><div style="overflow-x:auto;"><table><thead><tr><th>#</th><th>Запит</th><th class="num">Vol.</th><th class="num">Старт</th><th class="num">01.06</th><th class="num">Δ</th><th>Сторінка</th></tr></thead><tbody id="winnersBody"></tbody></table></div></div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><span class="num">05<span class="slash">/</span></span><h2>Топ-15 падінь</h2><span class="sub">старт → 08.06, потребують уваги</span></div>
+  <div class="card"><div style="overflow-x:auto;"><table><thead><tr><th>#</th><th>Запит</th><th class="num">Vol.</th><th class="num">Старт</th><th class="num">01.06</th><th class="num">Δ</th><th>Сторінка</th></tr></thead><tbody id="losersBody"></tbody></table></div>
+    <div class="note">Запити з позицією 101 — це фактично «випав із ТОП-100». 15 запитів все ще поза ТОП-100 — це вдвічі менше ніж було на 01.06 (25). За тиждень 10 запитів повернулись у видачу. Зменшення «випавших» — позитивний сигнал відновлення.</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><span class="num">06<span class="slash">/</span></span><h2>Топ-25 рухів за тиждень</h2><span class="sub">01.06 → 08.06 · ↑ переможці · ↓ падіння</span></div>
+  <div class="row">
+    <div class="card"><h3>Тижневі переможці</h3><div style="overflow-x:auto;max-height:560px;overflow-y:auto;"><table><thead><tr><th>Запит</th><th class="num">Vol.</th><th class="num">26.05</th><th class="num">01.06</th><th class="num">Δ</th></tr></thead><tbody id="weekWinBody"></tbody></table></div></div>
+    <div class="card"><h3>Тижневі падіння</h3><div style="overflow-x:auto;max-height:560px;overflow-y:auto;"><table><thead><tr><th>Запит</th><th class="num">Vol.</th><th class="num">26.05</th><th class="num">01.06</th><th class="num">Δ</th></tr></thead><tbody id="weekLosBody"></tbody></table></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><span class="num">07<span class="slash">/</span></span><h2>Висновки</h2><span class="sub">SEO-експеримент</span></div>
+  <div class="card dark"><ul class="insights" id="insights"></ul></div>
+</section>
+
+</div>
+
+<script>
+Chart.defaults.font.family="'Mulish','Inter',sans-serif";Chart.defaults.font.size=11;Chart.defaults.color="#000";
+
+const DATA = {
+  buckets: {
+    "Старт":  {top3:224, top10:153, top20:98, top50:7,   beyond:0},
+    "19.05":  {top3:311, top10:53,  top20:58, top50:32,  beyond:28},
+    "26.05":  {top3:372, top10:50,  top20:31, top50:9,   beyond:20},
+    "01.06":  {top3:295, top10:114, top20:36, top50:11,  beyond:26},
+    "08.06":  {top3:447, top10:12,  top20:7,  top50:0,   beyond:16},
+  },
+  avg: {"Старт":6.25,"19.05":6.42,"26.05":3.42,"01.06":4.32,"08.06":1.60},
+  top3Count: [224,311,372,295,447],
+  top10Count: [377,364,422,409,459],
+  movement_total: {improved:258, stable:201, declined:23, lost:15},
+  movement_week:  {improved:194, stable:279, declined:9, lost:0},
+  winners: [{"phrase": "контекстная реклама в киеве", "volume": 50, "start": 32, "end": 1, "delta": 31, "page": "/uslugi-kontekstnoy-reklamy"}, {"phrase": "контекстная реклама киев цена", "volume": 70, "start": 27, "end": 1, "delta": 26, "page": "/uslugi-kontekstnoy-reklamy"}, {"phrase": "услуги настройки контекстной рекламы", "volume": 40, "start": 24, "end": 1, "delta": 23, "page": "/uslugi-kontekstnoy-reklamy"}, {"phrase": "услуги размещения контекстной рекламы", "volume": 10, "start": 27, "end": 4, "delta": 23, "page": "/uslugi-kontekstnoy-reklamy"}, {"phrase": "услуга контекстная реклама", "volume": 70, "start": 23, "end": 3, "delta": 20, "page": "/uslugi-kontekstnoy-reklamy"}, {"phrase": "контекстная реклама заказать стоимость", "volume": 20, "start": 22, "end": 2, "delta": 20, "page": "/uslugi-kontekstnoy-reklamy"}, {"phrase": "розкрутка сайту", "volume": 320, "start": 20, "end": 1, "delta": 19, "page": "/"}, {"phrase": "просування сайтів київ", "volume": 170, "start": 20, "end": 1, "delta": 19, "page": "/ua/"}, {"phrase": "заказать smm продвижение в социальных сетях", "volume": 20, "start": 20, "end": 1, "delta": 19, "page": "/uslugi-smm"}, {"phrase": "смм продвижение стоимость", "volume": 20, "start": 20, "end": 1, "delta": 19, "page": "/uslugi-smm"}, {"phrase": "продвижение сайта по поисковым запросам", "volume": 10, "start": 20, "end": 1, "delta": 19, "page": "/"}, {"phrase": "seo продвижение в интернете", "volume": 10, "start": 20, "end": 1, "delta": 19, "page": "/"}, {"phrase": "seo оптимизация сайта интернет магазина", "volume": 10, "start": 20, "end": 1, "delta": 19, "page": "/"}, {"phrase": "продвижение сайта за процент от продаж", "volume": 10, "start": 20, "end": 1, "delta": 19, "page": "/"}, {"phrase": "продвижение сайтов комплексное", "volume": 40, "start": 19, "end": 1, "delta": 18, "page": "/kompleksnoe-prodvizhenie-sajta"}],
+  losers: [{"phrase": "сео просування сайтів", "volume": 90, "start": 1, "end": 101, "delta": -100, "page": "/"}, {"phrase": "продвижение сео", "volume": 20, "start": 1, "end": 101, "delta": -100, "page": "/"}, {"phrase": "агентство интернет маркетинга", "volume": 480, "start": 2, "end": 101, "delta": -99, "page": "/"}, {"phrase": "seo просування сайту", "volume": 320, "start": 2, "end": 101, "delta": -99, "page": "/"}, {"phrase": "сео просування", "volume": 210, "start": 2, "end": 101, "delta": -99, "page": "/"}, {"phrase": "просування сайту seo", "volume": 70, "start": 2, "end": 101, "delta": -99, "page": "/"}, {"phrase": "сео продвижение цена", "volume": 70, "start": 5, "end": 101, "delta": -96, "page": "/"}, {"phrase": "seo просування сайту в пошукових системах", "volume": 30, "start": 5, "end": 101, "delta": -96, "page": "/"}, {"phrase": "seo оптимизация стоимость", "volume": 20, "start": 5, "end": 101, "delta": -96, "page": "/"}, {"phrase": "seo продвижение сайта работа", "volume": 10, "start": 5, "end": 101, "delta": -96, "page": "/"}, {"phrase": "сайт агентства интернет маркетинга", "volume": 20, "start": 6, "end": 101, "delta": -95, "page": "/"}, {"phrase": "внутренняя оптимизация сайта стоимость", "volume": 20, "start": 7, "end": 101, "delta": -94, "page": "/"}, {"phrase": "сео продвижение сайта работа", "volume": 10, "start": 8, "end": 101, "delta": -93, "page": "/"}, {"phrase": "seo просування сайту в топ", "volume": 50, "start": 10, "end": 101, "delta": -91, "page": "/"}, {"phrase": "продвижение сайта под ключ цена", "volume": 20, "start": 10, "end": 101, "delta": -91, "page": "/"}],
+  winners_w: [{"phrase": "seo оптимизация", "volume": 590, "start": 101, "end": 1, "delta": 100}, {"phrase": "сео просування сайту", "volume": 210, "start": 101, "end": 1, "delta": 100}, {"phrase": "seo послуги", "volume": 110, "start": 101, "end": 1, "delta": 100}, {"phrase": "сео сайта", "volume": 110, "start": 101, "end": 1, "delta": 100}, {"phrase": "услуги настройки контекстной рекламы", "volume": 40, "start": 101, "end": 1, "delta": 100}, {"phrase": "просування сео", "volume": 20, "start": 101, "end": 1, "delta": 100}, {"phrase": "работа в интернете продвижение сайтов", "volume": 10, "start": 101, "end": 1, "delta": 100}, {"phrase": "seo оптимізація сайту", "volume": 260, "start": 101, "end": 3, "delta": 98}, {"phrase": "smm продвижение агентство", "volume": 10, "start": 101, "end": 3, "delta": 98}, {"phrase": "сколько стоит раскрутка сайта в гугле", "volume": 30, "start": 101, "end": 5, "delta": 96}, {"phrase": "продвижение сайтов недорого", "volume": 20, "start": 101, "end": 5, "delta": 96}, {"phrase": "seo продвижение цена в месяц", "volume": 10, "start": 101, "end": 7, "delta": 94}, {"phrase": "просування сайтів україна", "volume": 10, "start": 101, "end": 19, "delta": 82}, {"phrase": "продвижение сайта работа на дому", "volume": 10, "start": 65, "end": 1, "delta": 64}, {"phrase": "seo продвижение по трафику", "volume": 10, "start": 33, "end": 1, "delta": 32}, {"phrase": "сео оптимізація сайта", "volume": 10, "start": 29, "end": 1, "delta": 28}, {"phrase": "контентное продвижение сайта", "volume": 10, "start": 38, "end": 10, "delta": 28}, {"phrase": "замовити просування інтернет магазину", "volume": 30, "start": 28, "end": 1, "delta": 27}, {"phrase": "продвижение сайта по поисковым запросам", "volume": 10, "start": 25, "end": 1, "delta": 24}, {"phrase": "продвижение сайта продажи", "volume": 10, "start": 22, "end": 1, "delta": 21}, {"phrase": "продвижение сайта в поисковой выдаче", "volume": 20, "start": 21, "end": 1, "delta": 20}, {"phrase": "сео продвижение сайта интернет магазина", "volume": 20, "start": 20, "end": 1, "delta": 19}, {"phrase": "seo оптимізація сайта", "volume": 210, "start": 18, "end": 1, "delta": 17}, {"phrase": "продвижение сайта за процент от продаж", "volume": 10, "start": 18, "end": 1, "delta": 17}, {"phrase": "контекстная реклама в киеве", "volume": 50, "start": 17, "end": 1, "delta": 16}],
+  losers_w: [{"phrase": "просування сайту seo", "volume": 70, "start": 1, "end": 101, "delta": -100}, {"phrase": "seo просування сайту в топ", "volume": 50, "start": 1, "end": 101, "delta": -100}, {"phrase": "сео просування", "volume": 210, "start": 23, "end": 101, "delta": -78}, {"phrase": "просування сайту в пошукових системах", "volume": 90, "start": 1, "end": 76, "delta": -75}, {"phrase": "продвижение интернет магазина цена за месяц", "volume": 10, "start": 4, "end": 16, "delta": -12}, {"phrase": "продвижение сайтов под ключ", "volume": 50, "start": 1, "end": 12, "delta": -11}, {"phrase": "контекстная реклама цена Украина", "volume": 10, "start": 4, "end": 7, "delta": -3}, {"phrase": "создание и продвижение сайта цена", "volume": 50, "start": 6, "end": 8, "delta": -2}, {"phrase": "seo продвижение корпоративных сайтов", "volume": 30, "start": 1, "end": 3, "delta": -2}, {"phrase": "seo киев", "volume": 140, "start": 1, "end": 2, "delta": -1}, {"phrase": "продвижение сайта в гугле цена", "volume": 90, "start": 10, "end": 11, "delta": -1}, {"phrase": "seo оптимизация украина", "volume": 10, "start": 2, "end": 3, "delta": -1}, {"phrase": "продвижение сайтов частный вебмастер", "volume": 10, "start": 1, "end": 2, "delta": -1}, {"phrase": "seo продвижение украина", "volume": 10, "start": 2, "end": 3, "delta": -1}],
+};
+
+// === Buckets stacked chart ===
+const labels = Object.keys(DATA.buckets);
+const series = ['top3','top10','top20','top50','beyond'];
+const labelsRu = {top3:'ТОП-3', top10:'4–10', top20:'11–20', top50:'21–50', beyond:'>50 / випав'};
+const colors = {top3:'#0F6E56', top10:'#5A8C7F', top20:'#A8A8A8', top50:'#FE9379', beyond:'#FE391F'};
+new Chart(document.getElementById("buckets"),{
+  type:"bar",
+  data:{
+    labels:labels,
+    datasets:series.map(s=>({label:labelsRu[s], data:labels.map(l=>DATA.buckets[l][s]), backgroundColor:colors[s], borderWidth:0}))
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:true,position:"bottom",labels:{boxWidth:14}},
+      tooltip:{callbacks:{footer:(items)=>{const total=items.reduce((s,i)=>s+i.parsed.y,0);return 'Сума: '+total;}}}},
+    scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true,max:500,grid:{color:"#DCDCDC"},title:{display:true,text:"Кількість запитів"}}}
+  }
+});
+
+// === Avg pos line ===
+new Chart(document.getElementById("avgPos"),{
+  type:"line",
+  data:{labels:labels,datasets:[{
+    label:"Середня позиція",
+    data:Object.values(DATA.avg),
+    borderColor:"#FE391F",backgroundColor:"rgba(254,57,31,0.1)",
+    borderWidth:3,tension:0.3,pointRadius:6,pointBackgroundColor:Object.values(DATA.avg).map((v,i)=>v===1.60?"#0F6E56":v===3.42?"#5A8C7F":"#FE391F"),fill:true
+  }]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:false,reverse:true,grid:{color:"#DCDCDC"},title:{display:true,text:"Позиція (менше = краще)"}},x:{grid:{display:false}}}}
+});
+
+// === Top counts ===
+new Chart(document.getElementById("topCount"),{
+  type:"bar",
+  data:{labels:labels,datasets:[
+    {label:"ТОП-3",data:DATA.top3Count,backgroundColor:"#0F6E56",borderWidth:0},
+    {label:"ТОП-10",data:DATA.top10Count,backgroundColor:"#FE391F",borderWidth:0}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:"bottom"}},scales:{y:{beginAtZero:true,max:482,grid:{color:"#DCDCDC"}},x:{grid:{display:false}}}}
+});
+
+// === Movement donuts ===
+function donut(id,d){
+  new Chart(document.getElementById(id),{
+    type:"doughnut",
+    data:{labels:["Покращились","Стабільні","Погіршились","Випали"],datasets:[{
+      data:[d.improved,d.stable,d.declined,d.lost],
+      backgroundColor:["#0F6E56","#A8A8A8","#FE391F","#000"],borderWidth:2,borderColor:"#fff"
+    }]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:"right",labels:{boxWidth:12}}}}
+  });
+}
+donut("weekMove",DATA.movement_week);
+donut("totalMove",DATA.movement_total);
+
+// === Tables ===
+function posTag(p){
+  if(p===101||p>100) return `<span class="pos-tag beyond">>100</span>`;
+  if(p<=3) return `<span class="pos-tag top3">${p}</span>`;
+  if(p<=10) return `<span class="pos-tag top10">${p}</span>`;
+  if(p<=20) return `<span class="pos-tag top20">${p}</span>`;
+  return `<span class="pos-tag beyond">${p}</span>`;
+}
+function deltaTag(d){
+  if(d>0) return `<span class="delta up">+${d}</span>`;
+  if(d<0) return `<span class="delta down">${d}</span>`;
+  return `<span class="delta flat">0</span>`;
+}
+
+document.getElementById("winnersBody").innerHTML = DATA.winners.map((w,i)=>`<tr><td>${i+1}</td><td><div class="phrase">${w.phrase}</div></td><td class="num">${w.volume||'—'}</td><td class="num">${posTag(w.start)}</td><td class="num">${posTag(w.end)}</td><td class="num">${deltaTag(w.delta)}</td><td><span class="pageurl">${w.page||'—'}</span></td></tr>`).join("");
+
+document.getElementById("losersBody").innerHTML = DATA.losers.map((l,i)=>`<tr><td>${i+1}</td><td><div class="phrase">${l.phrase}</div></td><td class="num">${l.volume||'—'}</td><td class="num">${posTag(l.start)}</td><td class="num">${posTag(l.end)}</td><td class="num">${deltaTag(l.delta)}</td><td><span class="pageurl">${l.page||'—'}</span></td></tr>`).join("");
+
+document.getElementById("weekWinBody").innerHTML = DATA.winners_w.map(w=>`<tr><td><div class="phrase">${w.phrase}</div></td><td class="num">${w.volume||"—"}</td><td class="num">${posTag(w.start)}</td><td class="num">${posTag(w.end)}</td><td class="num">${deltaTag(w.delta)}</td></tr>`).join("");
+
+document.getElementById("weekLosBody").innerHTML = DATA.losers_w.map(l=>`<tr><td><div class="phrase">${l.phrase}</div></td><td class="num">${l.volume||"—"}</td><td class="num">${posTag(l.start)}</td><td class="num">${posTag(l.end)}</td><td class="num">${deltaTag(l.delta)}</td></tr>`).join("");
+
+
+// === Pages chart + table ===
+const PAGES = [{"page": "/", "count": 280, "avg_start": 5.5, "avg_19": 6.41, "avg_26": 2.73, "avg_01": 3.87, "avg_08": 1.23, "delta": 4.27, "top3": 266, "top10": 269}, {"page": "/ua/", "count": 48, "avg_start": 3.92, "avg_19": 5.45, "avg_26": 3.81, "avg_01": 4.6, "avg_08": 1.67, "delta": 2.25, "top3": 40, "top10": 42}, {"page": "/uslugi-smm", "count": 40, "avg_start": 10.57, "avg_19": 2.7, "avg_26": 2.5, "avg_01": 5.56, "avg_08": 1.38, "delta": 9.19, "top3": 39, "top10": 40}, {"page": "/blog/stoimost-prodvizhenija-sajta", "count": 24, "avg_start": 7.88, "avg_19": 12.22, "avg_26": 8.35, "avg_01": 7.13, "avg_08": 1.75, "delta": 6.13, "top3": 22, "top10": 24}, {"page": "/prodvighenie-zarubeghnyh-saytov", "count": 21, "avg_start": 3.38, "avg_19": 1.0, "avg_26": 1.0, "avg_01": 1.0, "avg_08": 1.0, "delta": 2.38, "top3": 21, "top10": 21}, {"page": "/uslugi-kontekstnoy-reklamy", "count": 11, "avg_start": 20.09, "avg_19": 30.27, "avg_26": 18.67, "avg_01": 10.7, "avg_08": 1.82, "delta": 18.27, "top3": 10, "top10": 11}, {"page": "/ua/blog/stoimost-prodvizhenija-sajta", "count": 10, "avg_start": 4.7, "avg_19": 1.6, "avg_26": 1.3, "avg_01": 2.6, "avg_08": 1.2, "delta": 3.5, "top3": 10, "top10": 10}, {"page": "/google-shopping", "count": 6, "avg_start": 4.33, "avg_19": 1.0, "avg_26": 1.0, "avg_01": 3.67, "avg_08": 1.0, "delta": 3.33, "top3": 6, "top10": 6}, {"page": "/blog/prodvizhenie-sajta-v-evrope", "count": 5, "avg_start": 1.0, "avg_19": 1.0, "avg_26": 1.0, "avg_01": 1.0, "avg_08": 1.0, "delta": 0.0, "top3": 5, "top10": 5}, {"page": "/blog/prodvizhenie-sajtov-v-top-10", "count": 5, "avg_start": 7.2, "avg_19": 9.25, "avg_26": 5.5, "avg_01": 6.8, "avg_08": 3.0, "delta": 4.2, "top3": 4, "top10": 4}, {"page": "/blog/kak-nastroit-google-shopping", "count": 4, "avg_start": 2.0, "avg_19": 1.0, "avg_26": 1.0, "avg_01": 1.0, "avg_08": 1.0, "delta": 1.0, "top3": 4, "top10": 4}, {"page": "/ua/google-shopping", "count": 3, "avg_start": 5.0, "avg_19": 1.33, "avg_26": 5.33, "avg_01": 6.33, "avg_08": 1.67, "delta": 3.33, "top3": 3, "top10": 3}, {"page": "/blog/smm-prodvizhenie", "count": 3, "avg_start": 15.0, "avg_19": 1.0, "avg_26": 1.33, "avg_01": 1.0, "avg_08": 1.0, "delta": 14.0, "top3": 3, "top10": 3}];
+const pageColors = ["#FE391F","#000","#0F6E56","#5A5A5A","#FE6647","#7A3030","#A8A8A8","#FE9379","#2D8B6F","#888","#C42814","#0A5A47","#FFB89B","#5A8C7F","#9F2D26","#444"];
+new Chart(document.getElementById("pagesChart"),{
+  type:"line",
+  data:{
+    labels:["Старт","19.05","26.05","01.06","08.06"],
+    datasets: PAGES.map((p,i)=>({
+      label: p.page.length>32 ? p.page.substring(0,32)+"…" : p.page,
+      data: [p.avg_start, p.avg_19, p.avg_26, p.avg_01, p.avg_08],
+      borderColor: pageColors[i % pageColors.length],
+      backgroundColor: pageColors[i % pageColors.length]+"33",
+      borderWidth: p.count>=20?3:1.5,
+      tension:0.25, pointRadius:3, fill:false,
+      hidden: p.count<5  // hide pages with few queries by default
+    }))
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:true,position:"right",labels:{boxWidth:10,font:{size:10}}}},
+    scales:{y:{reverse:true,beginAtZero:false,grid:{color:"#DCDCDC"},title:{display:true,text:"Середня позиція"}},x:{grid:{display:false}}}
+  }
+});
+document.getElementById("pagesBody").innerHTML = PAGES.map((p,i)=>{
+  const dCls = p.delta>0.5 ? "up" : p.delta<-0.5 ? "down" : "flat";
+  const dSign = p.delta>0 ? "+" : "";
+  return `<tr><td>${i+1}</td><td><span class="pageurl" style="max-width:none;display:inline-block;">${p.page}</span></td><td class="num"><b>${p.count}</b></td><td class="num">${p.avg_start}</td><td class="num">${p.avg_19||"—"}</td><td class="num">${p.avg_26||"—"}</td><td class="num">${p.avg_01||"—"}</td><td class="num"><b style="color:#0F6E56;">${p.avg_08}</b></td><td class="num"><span class="delta ${dCls}">${dSign}${p.delta.toFixed(2)}</span></td><td class="num">${p.top3} / ${p.top10}</td></tr>`;
+}).join("");
+
+// === Insights ===
+document.getElementById("insights").innerHTML = [
+  "<b>🚀 08.06 — новий пік експерименту!</b> Середня позиція 1.60 — мінімум за весь період. 447 з 482 запитів у ТОП-3 (93%), 459 у ТОП-10 (95%). Це найвищий результат.",
+  "<b>✓ Потужний відскок після 01.06.</b> 194 запити покращились за тиждень, 9 погіршились, 279 стабільні. Це підтверджує, що корекція 26.05→01.06 була тимчасовим коливанням SERP.",
+  "<b>✓ Загальний ефект експерименту вражає.</b> Зі старту 258 запитів покращились (54%), 23 погіршились (5%), 201 стабільний. Середня позиція -4.65 пункти (з 6.25 до 1.60).",
+  "<b>✓ Відновлення випавших.</b> 15 запитів поза ТОП-100 на 08.06 vs 25 на 01.06 — мінус 40%. 10 запитів повернулись у видачу за тиждень.",
+  "<b>✓ Топ-переможці тижня</b>: «розкрутка сайтів» (поз 1), «просування сайтів київ» (1), плюс ціла плеяда транзакційних запитів про вартість/ціну SEO в ТОП-3.",
+  "<b>✓ Усі ключові сторінки на 08.06 у ТОП-3</b>: головна / (поз 1.23), /ua/ (1.67), /uslugi-smm (1.38), /blog/stoimost-prodvizhenija-sajta (1.75), /uslugi-kontekstnoy-reklamy (1.82), /google-shopping (1.0).",
+  "<b>/uslugi-kontekstnoy-reklamy — найбільший рух</b>: старт 20.09 → 08.06 1.82 = +18 позицій. Найбільший трансформаційний приріст серед усіх сторінок.",
+  "<b>Рекомендація:</b> зберегти поточну стратегію оптимізації. 95% ТОП-10 — це фактичне насичення видачі. Тепер фокус — на тих 15 запитах поза ТОП-100 і утриманні позицій.",
+].map(i=>`<li><span class="marker">&gt;</span><span>${i}</span></li>`).join("");
+</script>
+</body>
+</html>
