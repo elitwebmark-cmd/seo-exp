@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <title>elit-web · SEO-експеримент · аналіз позицій</title>
-<meta name="description" content="Аналіз SEO-експерименту Elit-web.ua · динаміка позицій 482 запитів за 7 зрізів. Інтерактивна інфографіка з графіками, таблицями, фільтрами та висновками.">
+<meta name="description" content="Аналіз SEO-експерименту Elit-web.ua · динаміка позицій 482 запитів за 7 зрізів. ТОП-1: 433 запити (90%).">
 <meta name="robots" content="index,follow">
-<meta property="og:title" content="elit-web · SEO-експеримент · аналіз позицій">
-<meta property="og:description" content="Інтерактивна інфографіка динаміки 482 запитів. Середня позиція покращилась з 6.25 до 1.44.">
+<meta property="og:title" content="elit-web · SEO-експеримент · ТОП-1 433 запити">
+<meta property="og:description" content="90% запитів на 1-й позиції Google. Середня позиція 1.44.">
 <meta property="og:type" content="website">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000'/%3E%3Crect x='15' y='15' width='70' height='70' fill='%23FE391F'/%3E%3C/svg%3E">
@@ -83,6 +83,7 @@ table td.num{text-align:right;font-variant-numeric:tabular-nums;}
 .filter-reset:hover{background:#FE391F;}
 .filter-counter{background:#FFF6CC;padding:8px 12px;font-size:11px;font-weight:700;color:#7A5C00;margin-bottom:10px;}
 .pos-cell{display:inline-block;min-width:28px;padding:2px 6px;text-align:center;font-weight:800;font-variant-numeric:tabular-nums;font-size:11px;}
+.pos-cell.top1{background:#000;color:#fff;}
 .pos-cell.top3{background:#0F6E56;color:#fff;}
 .pos-cell.top10{background:#C8E6CC;color:#0F6E56;}
 .pos-cell.top20{background:#FFF6CC;color:#7A5C00;}
@@ -106,6 +107,7 @@ table td.num{text-align:right;font-variant-numeric:tabular-nums;}
   <div class="sec-head"><span class="num">00<span class="slash">/</span></span><h2>Підсумок експерименту</h2><span class="sub">482 запити</span></div>
   <div class="kpi-grid">
     <div class="kpi"><div class="lbl">Усього запитів</div><div class="val">482</div><div class="sub">під моніторингом</div></div>
+    <div class="kpi dark"><div class="lbl">🏆 ТОП-1 на 24.06</div><div class="val">433</div><div class="sub">90% · ⬆ зі старту (181, 38%) — РЕКОРД</div></div>
     <div class="kpi accent"><div class="lbl">ТОП-3 на 24.06</div><div class="val">448</div><div class="sub">93% · ⬆ зі старту (224, 46%) — НОВИЙ РЕКОРД</div></div>
     <div class="kpi green"><div class="lbl">ТОП-10 на 24.06</div><div class="val">458</div><div class="sub">95% · ⬆ зі старту (377, 78%)</div></div>
     <div class="kpi dark"><div class="lbl">Середня позиція</div><div class="val">1.44</div><div class="sub">старт 6.25 · ⬆ -4.81 поз. РЕКОРД</div></div>
@@ -114,7 +116,7 @@ table td.num{text-align:right;font-variant-numeric:tabular-nums;}
     <div class="kpi"><div class="lbl">Погіршились</div><div class="val" style="color:#FE391F;">8</div><div class="sub">2% · vs 23 (08.06)</div></div>
     <div class="kpi dark"><div class="lbl">Випали з ТОП-100</div><div class="val">18</div><div class="sub">4% · vs 15 (08.06)</div></div>
   </div>
-  <div class="bigflag"><span class="icon">🚀</span><span><b>24.06 — НОВИЙ РЕКОРД експерименту!</b> Середня позиція <b>1.44</b> (найкраща за весь період, vs 1.60 на 08.06), ТОП-3 — 448 запитів. За тиждень 15.06→24.06: 38 покращились, 7 погіршились, 419 стабільні — стабілізація на високому рівні.</span></div>
+  <div class="bigflag"><span class="icon">🏆</span><span><b>24.06 — РЕКОРД ТОП-1!</b> 433 з 482 запитів на 1-й позиції (90%). Зі старту експерименту: +252 запитів увійшли на 1-шу позицію. Середня позиція <b>1.44</b> — мінімум за весь період. За тиждень 15.06→24.06: 38 покращились, 7 погіршились, 419 стабільні.</span></div>
 </section>
 
 <section class="section">
@@ -126,10 +128,10 @@ table td.num{text-align:right;font-variant-numeric:tabular-nums;}
   <div class="sec-head"><span class="num">02<span class="slash">/</span></span><h2>Середня позиція</h2><span class="sub">динаміка по датах</span></div>
   <div class="row">
     <div class="card"><h3>Середня позиція (за виключенням >100)</h3><div class="chart-wrap"><canvas id="avgPos"></canvas></div>
-      <div class="note">Найкраща позиція — на 24.06 (1.44). Експеримент стабілізувався на рекордно високому рівні після тимчасової корекції 15.06 (1.59).</div>
+      <div class="note">Найкраща середня позиція — на 24.06 (1.44). Це означає, що в середньому запит знаходиться на 1.44 позиції — практично всі в ТОП-3.</div>
     </div>
-    <div class="card"><h3>Кількість у ТОП-3 vs ТОП-10</h3><div class="chart-wrap"><canvas id="topCount"></canvas></div>
-      <div class="note">ТОП-3: 448 (24.06) — новий пік. ТОП-10: 458. Експеримент демонструє стабільне зростання після провалу 01.06.</div>
+    <div class="card"><h3>Кількість у ТОП-1 vs ТОП-3 vs ТОП-10</h3><div class="chart-wrap"><canvas id="topCount"></canvas></div>
+      <div class="note">ТОП-1: <b>433</b> запитів (90% з 482) — рекорд експерименту. ТОП-3: 448. ТОП-10: 458. Експеримент досяг повного насичення видачі.</div>
     </div>
   </div>
 </section>
@@ -174,6 +176,7 @@ table td.num{text-align:right;font-variant-numeric:tabular-nums;}
       <div class="filter-field"><label>Сторінка (24.06)</label><select id="f-page"><option value="">— всі —</option></select></div>
       <div class="filter-field"><label>Позиція на 24.06</label><select id="f-pos">
         <option value="">— всі —</option>
+        <option value="top1">🏆 ТОП-1</option>
         <option value="top3">ТОП-3</option>
         <option value="top10">ТОП-10</option>
         <option value="top20">11-20</option>
@@ -213,7 +216,7 @@ table td.num{text-align:right;font-variant-numeric:tabular-nums;}
         <tbody id="full-table-body"></tbody>
       </table>
     </div>
-    <div class="note" style="margin-top:10px;">Кольорове кодування: <span class="pos-cell top3">ТОП-3</span> · <span class="pos-cell top10">ТОП-10</span> · <span class="pos-cell top20">11-20</span> · <span class="pos-cell top50">21-50</span> · <span class="pos-cell top100">51-100</span> · <span class="pos-cell over">&gt;100</span> · <span class="pos-cell none">нема</span>. Δ = зрушення на 08.06 у порівнянні зі стартом.</div>
+    <div class="note" style="margin-top:10px;">Кольорове кодування: <span class="pos-cell top1">ТОП-1</span> · <span class="pos-cell top3">2–3</span> · <span class="pos-cell top10">ТОП-10</span> · <span class="pos-cell top20">11-20</span> · <span class="pos-cell top50">21-50</span> · <span class="pos-cell top100">51-100</span> · <span class="pos-cell over">&gt;100</span> · <span class="pos-cell none">нема</span>. Δ = зрушення на 08.06 у порівнянні зі стартом.</div>
   </div>
 </section>
 
@@ -229,15 +232,16 @@ Chart.defaults.font.family="'Mulish','Inter',sans-serif";Chart.defaults.font.siz
 
 const DATA = {
   buckets: {
-    "Старт": {top3:224, top10:153, top20:98, top50:7, beyond:0},
-    "19.05": {top3:311, top10:53, top20:58, top50:32, beyond:28},
-    "26.05": {top3:372, top10:50, top20:31, top50:9, beyond:20},
-    "01.06": {top3:295, top10:114, top20:36, top50:11, beyond:26},
-    "08.06": {top3:447, top10:12, top20:7, top50:0, beyond:16},
-    "15.06": {top3:436, top10:11, top20:4, top50:4, beyond:27},
-    "24.06": {top3:448, top10:10, top20:3, top50:3, beyond:18}
+    "Старт": {top1:181, top3:43, top10:153, top20:98, top50:7, beyond:0},
+    "19.05": {top1:268, top3:43, top10:53, top20:58, top50:32, beyond:28},
+    "26.05": {top1:303, top3:69, top10:50, top20:31, top50:9, beyond:20},
+    "01.06": {top1:234, top3:61, top10:114, top20:36, top50:11, beyond:26},
+    "08.06": {top1:409, top3:38, top10:12, top20:7, top50:0, beyond:16},
+    "15.06": {top1:395, top3:41, top10:11, top20:4, top50:4, beyond:27},
+    "24.06": {top1:433, top3:15, top10:10, top20:3, top50:3, beyond:18}
   },
   avg: {"Старт":6.25,"19.05":6.42,"26.05":3.42,"01.06":4.32,"08.06":1.6,"15.06":1.59,"24.06":1.44},
+  top1Count: [181,268,303,234,409,395,433],
   top3Count: [224,311,372,295,447,436,448],
   top10Count: [377,364,422,409,459,447,458],
   movement_total: {improved:262, stable:194, declined:8, lost:18},
@@ -250,9 +254,9 @@ const DATA = {
 
 // === Buckets stacked chart ===
 const labels = Object.keys(DATA.buckets);
-const series = ['top3','top10','top20','top50','beyond'];
-const labelsRu = {top3:'ТОП-3', top10:'4–10', top20:'11–20', top50:'21–50', beyond:'>50 / випав'};
-const colors = {top3:'#0F6E56', top10:'#5A8C7F', top20:'#A8A8A8', top50:'#FE9379', beyond:'#FE391F'};
+const series = ['top1','top3','top10','top20','top50','beyond'];
+const labelsRu = {top1:'ТОП-1', top3:'2–3', top10:'4–10', top20:'11–20', top50:'21–50', beyond:'>50 / випав'};
+const colors = {top1:'#000', top3:'#0F6E56', top10:'#5A8C7F', top20:'#A8A8A8', top50:'#FE9379', beyond:'#FE391F'};
 new Chart(document.getElementById("buckets"),{
   type:"bar",
   data:{
@@ -283,6 +287,7 @@ new Chart(document.getElementById("avgPos"),{
 new Chart(document.getElementById("topCount"),{
   type:"bar",
   data:{labels:labels,datasets:[
+    {label:"ТОП-1",data:DATA.top1Count,backgroundColor:"#000",borderWidth:0},
     {label:"ТОП-3",data:DATA.top3Count,backgroundColor:"#0F6E56",borderWidth:0},
     {label:"ТОП-10",data:DATA.top10Count,backgroundColor:"#FE391F",borderWidth:0}
   ]},
@@ -352,19 +357,20 @@ new Chart(document.getElementById("pagesChart"),{
 document.getElementById("pagesBody").innerHTML = PAGES.map((p,i)=>{
   const dCls = p.delta>0.5 ? "up" : p.delta<-0.5 ? "down" : "flat";
   const dSign = p.delta>0 ? "+" : "";
-  return `<tr><td>${i+1}</td><td><span class="pageurl" style="max-width:none;display:inline-block;">${p.page}</span></td><td class="num"><b>${p.count}</b></td><td class="num">${p.avg_start}</td><td class="num">${p.avg_19||"—"}</td><td class="num">${p.avg_26||"—"}</td><td class="num">${p.avg_01||"—"}</td><td class="num">${p.avg_08||"—"}</td><td class="num">${p.avg_15||"—"}</td><td class="num"><b style="color:#0F6E56;">${p.avg_24}</b></td><td class="num"><span class="delta ${dCls}">${dSign}${p.delta.toFixed(2)}</span></td><td class="num">${p.top3} / ${p.top10}</td></tr>`;
+  return `<tr><td>${i+1}</td><td><span class="pageurl" style="max-width:none;display:inline-block;">${p.page}</span></td><td class="num"><b>${p.count}</b></td><td class="num">${p.avg_start}</td><td class="num">${p.avg_19||"—"}</td><td class="num">${p.avg_26||"—"}</td><td class="num">${p.avg_01||"—"}</td><td class="num">${p.avg_08||"—"}</td><td class="num">${p.avg_15||"—"}</td><td class="num"><b style="color:#0F6E56;">${p.avg_24}</b></td><td class="num"><span class="delta ${dCls}">${dSign}${p.delta.toFixed(2)}</span></td><td class="num">${p.top1} / ${p.top3} / ${p.top10}</td></tr>`;
 }).join("");
 
 
 // === Insights ===
 document.getElementById("insights").innerHTML = [
-  "<b>🚀 24.06 — НОВИЙ ПІК експерименту!</b> Середня позиція <b>1.44</b> (мінімум за весь період, vs 1.60 на 08.06). 448 з 482 запитів у ТОП-3 (93%), 458 у ТОП-10 (95%).",
-  "<b>✓ Стабілізація на високому рівні.</b> За тиждень 15.06→24.06: 38 покращились, 7 погіршились, 419 стабільні, 18 випали. Видача насичена — рости вже майже немає куди.",
-  "<b>✓ Загальний ефект експерименту вражає.</b> Зі старту: 262 запитів покращились (54%), 8 погіршились (2%), 194 стабільні. Середня позиція зменшилась на 4.81 пункти (з 6.25 до 1.44).",
-  "<b>⚠ 18 запитів випали з ТОП-100</b> (vs 15 на 08.06). За тиждень 7 запитів погіршились — це менші коливання порівняно з квітневими провалами.",
+  "<b>🏆 24.06 — НОВИЙ ПІК: ТОП-1 = 433 запитів</b> (90% з 482)! Зі старту експерименту: <b>+252</b> запитів увійшли на 1-шу позицію (зі 181 до 433). Це означає повне домінування у видачі.",
+  "<b>✓ Динаміка ТОП-1 по тижнях:</b> старт=181 → 19.05=268 → 26.05=303 → 01.06=234 → 08.06=409 → 15.06=395 → 24.06=<b>433</b>. За 2.5 місяці кількість запитів на 1-й позиції зросла на 139%.",
+  "<b>✓ Середня позиція 1.44</b> (мін за весь період). 90% ТОП-1, 93% ТОП-3, 95% ТОП-10 — повне насичення видачі.",
+  "<b>✓ Стабілізація на високому рівні.</b> За тиждень 15.06→24.06: 38 покращились, 7 погіршились, 419 стабільні, 18 випали.",
+  "<b>✓ Загальний ефект експерименту:</b> 262 запитів покращились (54%), 8 погіршились (2%), 194 стабільні. Середня позиція -4.81 пункти.",
+  "<b>⚠ 18 запитів випали з ТОП-100</b>. Потрібен індивідуальний аудит — більшість це варіації загальних запитів типу «сео просування», «продвижение сео».",
   "<b>✓ Топ-переможці зі старту</b>: «контекстная реклама в киеве» (+31 поз), «контекстная реклама киев цена» (+26), «услуги размещения контекстной рекламы» (+26). Усі — на /uslugi-kontekstnoy-reklamy.",
-  "<b>✓ Ключові сторінки тримаються в ТОП-3</b>: головна / (поз ~1.2), /ua/ (~1.5), /uslugi-smm (~1.4), /uslugi-kontekstnoy-reklamy (~1.5), /blog/stoimost-prodvizhenija-sajta (~2.0).",
-  "<b>Висновок:</b> SEO-експеримент досяг максимуму — 93%+ запитів у ТОП-3, 95%+ в ТОП-10. Фокус тепер — утримання позицій + повернення 18 випавших + експансія на нові запити (геоспецифічні і нові ніші)."
+  "<b>Висновок:</b> SEO-експеримент досяг межі — 90%+ запитів на 1-й позиції. Фокус тепер: 1) утримання ТОП-1, 2) повернення 18 випавших, 3) експансія на нові високочастотні запити."
 ].map(i=>`<li><span class="marker">&gt;</span><span>${i}</span></li>`).join("");
 </script>
 <script>
@@ -383,6 +389,7 @@ FT_PAGES.forEach(p => {
 function posBucket(p){
   if(p===null||p===undefined) return "none";
   if(p>100) return "over";
+  if(p===1) return "top1";
   if(p<=3) return "top3";
   if(p<=10) return "top10";
   if(p<=20) return "top20";
